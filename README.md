@@ -16,7 +16,7 @@ This repository contains the implementation of a multi-task learning framework t
 
 To overcome the inherent noise found in raw depth sensor data and the gradient domination issue in multi-task learning, this project introduces a novel **Attentional RGB-D Two-Stream Late Fusion** architecture. By integrating a Squeeze-and-Excitation (SE) channel attention mechanism and a highly rigorous data preprocessing pipeline, the network autonomously mutes modality-specific noise, effectively transforming the depth stream into a robust structural enhancer.
 
-##  ey Innovations
+## Key Innovations
 * **Dynamic ROI Cropping & Spatial Synchronization:** Extracts the bounding box from the ground-truth mask to dynamically crop the Region of Interest (ROI). All spatial transformations (rotation, horizontal flip) are perfectly synchronized across RGB, Depth, and Mask tensors to eliminate background clutter and preserve absolute geometric consistency.
 * **Absolute Physical Depth Clipping:** Restricts raw depth data to a human-interactive spatial volume (200mm - 1500mm), systematically eradicating extreme background outliers and dead pixels.
 * **SE-Attentional Late Fusion:** Dynamically learns inter-channel dependencies via a Squeeze-and-Excitation block to autonomously mute corrupted depth features before the final multi-task heads.
@@ -38,4 +38,5 @@ conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvi
 
 # Install additional required packages from requirements.txt
 pip install -r requirements.txt
+
 
